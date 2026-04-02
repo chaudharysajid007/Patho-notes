@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pathology MCQ Cheat Sheet</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', sans-serif; background: #0f0f0f; color: #e0e0e0; padding: 16px; }
+  h1 { text-align: center; color: #ff4444; font-size: 1.4em; margin-bottom: 4px; }
+  .subtitle { text-align: center; color: #888; font-size: 0.8em; margin-bottom: 16px; }
+  .system { background: #1a1a1a; border-left: 4px solid #ff4444; border-radius: 8px; margin-bottom: 14px; overflow: hidden; }
+  .system-title { background: #ff4444; color: white; padding: 8px 14px; font-weight: bold; font-size: 0.95em; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+  .system-title:hover { background: #cc3333; }
+  .system-content { padding: 10px 14px; }
+  .topic { margin-bottom: 10px; }
+  .topic-name { color: #ff8888; font-weight: bold; font-size: 0.85em; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .fact { background: #222; border-radius: 4px; padding: 5px 9px; margin-bottom: 3px; font-size: 0.82em; line-height: 1.45; }
+  .fact .keyword { color: #ffd700; font-weight: bold; }
+  .fact .answer { color: #44ff88; font-weight: bold; }
+  .tip { background: #1a2a1a; border: 1px solid #44ff88; border-radius: 4px; padding: 5px 9px; margin-bottom: 3px; font-size: 0.82em; }
+  .tip::before { content: "⚡ "; color: #44ff88; }
+  .hidden { display: none; }
+  .arrow { transition: transform 0.2s; }
+  .arrow.open { transform: rotate(180deg); }
+  .search-bar { width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #444; background: #1a1a1a; color: white; font-size: 0.9em; margin-bottom: 14px; }
+  .search-bar:focus { outline: none; border-color: #ff4444; }
+  .tag { display: inline-block; background: #2a1a1a; color: #ff8888; border-radius: 3px; padding: 1px 5px; font-size: 0.75em; margin-right: 3px; }
+  
+  
+  
+  .popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup-content {
+  background: #000000;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  width: 300px;
+}
+
+.buttons {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.thanks {
+  background: #fc1212;
+  color: white;
+}
+
+.popup-content h3 {
+  color: white !important;
+}
+
+
+.cancel {
+  background: #fc1212;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<h1> PATHOLOGY MCQ SURVIVAL SHEET</h1>
+<p class="subtitle">Golden buzzwords only. Read once, retain forever.</p>
+
+<input class="search-bar" id="searchInput" type="text" placeholder="🔍 Search any keyword...">
+
+<div id="content">
+
+<!-- RESPIRATORY -->
+<div class="system">
+  <div class="system-title">1. RESPIRATORY SYSTEM <span class="arrow">▼</span></div>
+  <div class="system-content">
+
+    <div class="topic">
+      <div class="topic-name">Obstructive Lung Diseases — KEY RULE</div>
+      <div class="tip">All obstructive = decreased FEV1/FVC ratio. Distinguish by cause/mechanism.</div>
+    </div>
+
+    <div class="topic">
+      <div class="topic-name">Asthma</div>
+      <div class="fact"><span class="keyword">Buzzword:</span> <span class="answer">Reversible</span> bronchoconstriction, Curschmann spirals, Charcot-Leyden crystals</div>
+      <div class="fact"><span class="keyword">Cells:</span> <span class="answer">Eosinophils</span> — the signature cell</div>
+      <div class="fact"><span class="keyword">Mechanism:</span> Type I hypersensitivity (IgE-mediated)</div>
+      <div class="fact"><span class="keyword">Mucus plugging</span> → Curschmann spirals in sputum</div>
+    </div>
+
+    <div class="topic">
+      <div class="topic-name">Chronic Bronchitis</div>
+      <div class="fact"><span class="keyword">Definition:</span> Productive cough <span class="answer">≥3 months/year for ≥2 consecutive years</span></div>
+      <div class="fact"><span class="keyword">Buzzword:</span> <span class="answer">Blue bloater</span>, hypercapnia, cyanosis, edema</div>
+      <div class="fact"><span class="keyword">Pathology:</span> Reid index >50% (mucus gland hypertrophy)</div>
+      <div class="fact"><span class="keyword">Cause:</span> Smoking → goblet cell hyperplasia</div>
+    </div>
+
+    <div class="topic">
+      <div class="topic-name">Emphysema</div>
+      <div class="fact"><span class="keyword">Buzzword:</span> <span class="answer">Pink puffer</span>, barrel chest, pursed lips</div>
+      <div class="fact"><span class="keyword">Mechanism:</span> <span class="answer">Protease-antiprotease</span> imbalance → alveolar wall destruction</div>
+      <div class="fact"><span class="keyword">Centriacinar:</span> Smoking (upper lobes affected)</div>
+      <div class="fact"><span class="keyword">Panacinar:</span> <span class="answer">Alpha-1 antitrypsin deficiency</span> (lower lobes)</div>
+    </div>
+
+    <div class="topic">
+      <div class="topic-name">Bronchiectasis</div>
+      <div class="fact"><span class="keyword">Buzzword:</span> <span class="answer">Permanent dilation</span> of bronchi, copious foul-smelling sputum</div>
+      <div class="fact"><span class="keyword">Cause:</span> Cystic fibrosis (most common), Kartagener syndrome</div>
+      <div class="fact"><span class="keyword">Kartagener:</span> Bronchiectasis + situs inversus + infertility</div>
+    </div>
+
+    <div class="topic">
+      <div class="topic-name">Pneumonia</div>
+      <div class="fact"><span class="keyword">Lobar pneumonia stages:</span> Congestion → <span class="answer">Red hepatization</span> → Grey hepatization → Resolution</div>
+      <div class="fact"><span class="keyword">Most common cause lobar:</span> <span class="answer">Streptococcus pneumoniae</span></div>
+      <div class="fact"><span class="keyword">Atypical pneumonia:</span> Mycoplasma — "walking pneumonia", cold agglutinins</div>
+      <div class="fact"><span class="keyword">Bronchopneumonia:</span> Patchy, bilateral, Staphylococcus/H. influenzae</div>
+    </div>
+
+    <div class="topic">
+      <div class="topic-name">ARDS</div>
+      <div class="fact"><span class="keyword">Buzzword:</span> <span class="answer">Hyaline membrane formation</span>, diffuse alveolar damage</div>
+      <div class="fact"><span class="keyword">Mechanism:</span> Increased capillary permeability → non-cardiogenic pulmonary edema</div>
+      <div class="fact"><span class="keyword">Key:</span> Normal PCWP (rules out cardiac cause)</div>
+    </div>
+
+    <div class="topic">
+      <div class="topic-name">Pleural Effusion</div>
+      <div class="fact"><span class="keyword">Transudate:</span> <span class="answer">Heart failure, cirrhosis, nephrotic syndrome</span> (low protein)</div>
+      <div class="fact"><span class="keyword">Exudate:</span> Infection, malignancy, inflammation (high protein)</div>
+      <div class="tip">Light's criteria: Exudate if protein >0.5 or LDH >0.6 of serum</div>
+    </div>
+
+    <div class="topic">
+      <div class="topic-name">Lung Tumors</div>
+      <div class="fact"><span class="keyword">Most common primary:</span> <span class="answer">Adenocarcinoma</span> (peripheral, non-smokers possible)</div>
+      <div class="fact"><span class="keyword">Central location:</span> Squamous cell + Small cell</div>
+      <div class="fact"><span class="keyword">Squamous cell:</span> <span class="answer">Keratin pearls</span>, cavitation, PTHrP (hypercalcemia)</div>
+      <div class="fact"><span class="keyword">Small cell:</span> <span class="answer">ACTH/ADH/Eaton-Lambert</span>, worst prognosis, neuroendocrine</div>
+      <div class="fact"><span class="keyword">Pancoast tumor:</span> Apex → Horner syndrome (ptosis, miosis, anhidrosis)</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- CARDIOVASCULAR -->
+<div class="system">
+  <div class="system-title">2. CARDIOVASCULAR SYSTEM <span class="arrow">▼</span></div>
+  <div class="system-content">
+
+    <div class="topic">
+      <div class="topic-name">Atherosclerosis</div>
+      <div class="fact"><span class="keyword">First lesion:</span> <span class="answer">Fatty streak</span> (reversible)</div>
+      <div class="fact"><span class="keyword">Key cell:</span> <span class="answer">Foam cell</span> = macrophage engulfing LDL</div>
+      <div class="fact"><span class="keyword">Plaque:</span> Fibrous cap + necrotic core + calcium</div>
+      <div class="fact"><span class="keyword">Most dangerous:</span> Plaque rupture → thrombus</div>
+    </div>
+
+    <div class="topic">
+      <div class="topic-name">Ischemic Heart Disease</div>
+      <div class="fact"><span class="keyword">0–24 hrs:</span> Coagulative necrosis, <span class="answer">wavy fibers</span>, no neutrophils yet</div>
+      <div class="fact"><span class="keyword">1–3 days:</span> <span class="answer">Neutrophil</span> infiltration (yellow softening)</div>
+      <div class="fact"><span class="keyword">3–10 days:</span> <span class="answer">Macrophages</span> (risk of rupture!)</div>
+      <div class="fact"><span class="keyword">Weeks:</span> Granulation tissue → scar</div>
+      <div class="fact"><span class="keyword">Earliest marker:</span> <span class="answer">Troponin I/T</span> (most specific)</div>
+      <div class="fact"><span class="keyword">STEMI:</span> Full thickness = transmural. NSTEMI = subendocardial</div>
+    </div>
+
+    <div class="topic">
+      <div class="topic-name">Heart Failure</div>
+      <div class="fact"><span class="keyword">Left HF:</span> <span class="answer">Pulmonary edema</span>, orthopnea, PND, hemosiderin-laden macrophages ("heart failure cells")</div>
+      <div class="fact"><span class="keyword">Right HF:</span> <span class="answer">Nutmeg liver</span>, JVD, peripheral edema, ascites</div>
+      <div class="tip">Right HF most commonly caused by Left HF</div>
+    </div>
+
+    <div class="topic">
+      <div class="topic-name">Hypertensive Heart Disease</div>
+      <div class="fact"><span class="keyword">Buzzword:</span> <span class="answer">Concentric LV hypertrophy</span> (pressure overload)</div>
+      <div class="fact"><span class="keyword">Dilated cardiomyopathy:</span> Volume overload → eccentric hypertrophy</div>
+    </div>
+
+    <div class="topic">
+      <div class="topic-name">Infective Endocarditis</div>
+      <div class="fact"><span class="keyword">Acute:</span> <span class="answer">S. aureus</span> — destroys normal valves, large friable vegetations</div>
+      <div class="fact"><span class="keyword">Subacute:</span> <span class="answer">Strep viridans</span> — damaged valves (dental procedures)</div>
+      <div class="fact"><span class="keyword">Osler nodes:</span> Painful (fingers/toes)</div>
+      <div class="fact"><span class="keyword">Janeway lesions:</span> <span class="answer">Painless</span> (palms/soles)</div>
+      <div class="fact"><span class="keyword">Roth spots:</span> Retinal hemorrhages with white centers</div>
+    </div>
+
+    <div class="topic">
+      <div class="topic-name">Rheumatic Heart Disease</div>
+      <div class="fact"><span class="keyword">Cause:</span> Group A Strep → molecular mimicry</div>
+      <div class="fact"><span class="keyword">Buzzword:</span> <span class="answer">Aschoff bodies</span> (pathognomonic) + Anitschkow cells (caterpillar cells)</div>
+      <div class="fact"><span class="keyword">Most common valve:</span> <span class="answer">Mitral stenosis</span></div>
+      <div class="fact"><span class="keyword">Vegetations:</span> Small, along line of closure (sterile)</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- THYROID -->
+<div class="system">
+  <div class="system-title">3. THYROID GLAND <span class="arrow">▼</span></div>
+  <div class="system-content">
+
+    <div class="topic">
+      <div class="topic-name">Nodular Goiter</div>
+      <div class="fact"><span class="keyword">Cause:</span> Iodine deficiency (most common worldwide)</div>
+      <div class="fact"><span class="keyword">Buzzword:</span> <span class="answer">Colloid-filled follicles</span>, multinodular</div>
+      <div class="fact"><span class="keyword">Key:</span> Euthyroid usually</div>
+    </div>
+
+    <div class="topic">
+      <div class="topic-name">Thyroiditis Types</div>
+      <div class="fact"><span class="keyword">Hashimoto:</span> <span class="answer">Anti-TPO, anti-thyroglobulin</span>, Hürthle cells, most common hypothyroid cause</div>
+      <div class="fact"><span class="keyword">De Quervain (Granulomatous):</span> Post-viral, painful, <span class="answer">giant cells</span>, transient hyperthyroid → hypothyroid</div>
+      <div class="fact"><span class="keyword">Riedel:</span> <span class="answer">Stone-hard fibrosis</span>, can mimic cancer</div>
+      <div class="fact"><span class="keyword">Graves disease:</span> <span class="answer">TSH receptor antibodies</span>, exophthalmos, pretibial myxedema</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- GIT -->
+<div class="system">
+  <div class="system-title">4. GIT <span class="arrow">▼</span></div>
+  <div class="system-content">
+
+    <div class="topic">
+      <div class="topic-name">Oral Cavity Quick Hits</div>
+      <div class="fact"><span class="keyword">Aphthous ulcer:</span> Painful, <span class="answer">NOT HSV</span>, no vesicles, stress-related</div>
+      <div class="fact"><span class="keyword">HSV:</span> Vesicles that rupture → ulcers</div>
+      <div class="fact"><span class="keyword">Leukoplakia:</span> White patch, <span class="answer">can't wipe off</span>, premalignant</div>
+      <div class="fact"><span class="keyword">Oral candidiasis:</span> White patch, <span class="answer">CAN wipe off</span>, pseudohyphae</div>
+      <div class="fact"><span class="keyword">Pyogenic granuloma:</span> Lobular capillary hemangioma, bleeds easily, pregnancy</div>
+      <div class="fact"><span class="keyword">Mucocele:</span> Lower lip, mucin spillage from minor salivary gland</div>
+    </div>
+
+    <div class="topic">
+      <div class="topic-name">Esophagus</div>
+      <div class="fact"><span class="keyword">Barrett esophagus:</span> Squamous → <span class="answer">Intestinal metaplasia</span> (goblet cells), GERD complication, risk of adenocarcinoma</div>
+      <div class="fact"><span class="keyword">Achalasia:</span> <span class="answer">Failure of LES to relax</span>, loss of Auerbach plexus, bird-beak on barium</div>
+      <div class="fact"><span class="keyword">Mallory-Weiss:</span> Longitudinal tear, alcoholic vomiting</div>
+      <div class="fact"><span class="keyword">Varices:</span> Portal hypertension → dilated submucosal veins, massive bleed</div>
+    </div>
+
+    <div class="topic">
+      <div class="topic-name">Stomach</div>
+      <div class="fact"><span class="keyword">H. pylori:</span> Most common cause of <span class="answer">peptic ulcer + gastric carcinoma</span></div>
+      <div class="fact"><span class="keyword">Gastric ulcer:</span> Pain with eating (vs. duodenal = relief with eating)</div>
+      <div class="fact"><span class="keyword">Gastric carcinoma:</span> <span class="answer">Signet ring cells</span> (abundant mucin pushes nucleus aside)</div>
+      <div class="fact"><span class="keyword">Krukenberg tumor:</span> Gastric carcinoma metastasis to ovaries</div>
+      <div class="fact"><span class="keyword">Virchow node:</span> Left supraclavicular node → gastric/GI malignancy</div>
+    </div>
+
+    <div class="topic">
+      <div class="topic-name">IBD — Crohn's vs Ulcerative Colitis</div>
+      <div class="fact"><span class="keyword">Crohn's:</span> <span class="answer">Any part mouth-to-anus</span>, skip lesions, transmural, cobblestone, fistulas, granulomas, NO blood typically</div>
+      <div class="fact"><span class="keyword">UC:</span> <span class="answer">Rectum upward, continuous</span>, mucosal only, crypt abscesses, bloody diarrhea</div>
+      <div class="fact"><span class="keyword">Cancer risk:</span> UC > Crohn's</div>
+      <div class="tip">Crohn = Cobblestone, Creeping fat, skip lesions | UC = Uniform, Ulcers, rectum Up</div>
+    </div>
+
+    <div class="topic">
+      <div class="topic-name">Appendicitis</div>
+      <div class="fact"><span class="keyword">Most common cause:</span> <span class="answer">Fecalith</span> (adults), lymphoid hyperplasia (children)</div>
+      <div class="fact"><span class="keyword">Cells:</span> Neutrophil infiltration of muscularis</div>
+    </div>
+
+    <div class="topic">
+      <div class="topic-name">Liver</div>
+      <div class="fact"><span class="keyword">Hep A:</span> Fecal-oral, <span class="answer">NO chronicity</span>, anti-HAV IgM</div>
+      <div class="fact"><span class="keyword">Hep B:</span> HBsAg = active infection, HBsAb = immunity, HBeAg = <span class="answer">high infectivity</span></div>
+      <div class="fact"><span class="keyword">Hep C:</span> <span class="answer">Most common chronic</span> hepatitis, blood-borne, cirrhosis + HCC</div>
+      <div class="fact"><span class="keyword">Fatty liver:</span> Alcoholic = <span class="answer">centrilobular</span>; NAFLD = metabolic syndrome</div>
+      <div class="fact"><span class="keyword">Jaundice types:</span> Pre-hepatic = unconjugated ↑ | Hepatic = both | Post-hepatic = conjugated ↑ (dark urine, pale stool)</div>
+      <div class="fact"><span class="keyword">Wilson's:</span> Copper accumulation, <span class="answer">Kayser-Fleischer rings</span>, ceruloplasmin ↓</div>
+      <div class="fact"><span class="keyword">Hemochromatosis:</span> Iron, "bronze diabetes," <span class="answer">HFE gene</span></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- RENAL -->
+<div class="system">
+  <div class="system-title">5. RENAL SYSTEM <span class="arrow">▼</span></div>
+  <div class="system-content">
+
+    <div class="topic">
+      <div class="topic-name">Nephrotic vs Nephritic — MASTER THIS</div>
+      <div class="tip">Nephrotic = protein loss (>3.5g/day) → edema, hypoalbuminemia, hyperlipidemia, lipiduria. NO hematuria.</div>
+      <div class="tip">Nephritic = inflammation → hematuria, RBC casts, hypertension, oliguria, mild proteinuria.</div>
+    </div>
+
+    <div class="topic">
+      <div class="topic-name">Nephrotic Syndromes</div>
+      <div class="fact"><span class="keyword">Children #1:</span> <span class="answer">Minimal Change Disease</span> — effacement of podocyte foot processes (EM), steroid-responsive</div>
+      <div class="fact"><span class="keyword">Adults #1:</span> <span class="answer">Focal Segmental Glomerulosclerosis</span> (FSGS) — HIV, heroin</div>
+      <div class="fact"><span class="keyword">Membranous:</span> "Spike and dome," hepatitis B, SLE, thickened BM</div>
+      <div class="fact"><span class="keyword">Diabetic:</span> <span class="answer">Kimmelstiel-Wilson nodules</span></div>
+    </div>
+
+    <div class="topic">
+      <div class="topic-name">Nephritic Syndromes</div>
+      <div class="fact"><span class="keyword">Post-strep GN:</span> <span class="answer">"Humps" on EM</span> (subepithelial deposits), low C3, hematuria in child after sore throat</div>
+      <div class="fact"><span class="keyword">IgA nephropathy (Berger):</span> Hematuria <span class="answer">during/after</span> URI (vs. post-strep = 2–3 weeks after)</div>
+      <div class="fact"><span class="keyword">Goodpasture:</span> <span class="answer">Linear IgG</span> deposits, anti-GBM antibody, lungs + kidneys</div>
+      <div class="fact"><span class="keyword">Lupus nephritis:</span> "Full house" immunofluorescence (IgG+IgM+IgA+C3+C1q)</div>
+    </div>
+
+    <div class="topic">
+      <div class="topic-name">Renal Tumors</div>
+      <div class="fact"><span class="keyword">Renal Cell Carcinoma:</span> <span class="answer">Clear cells</span> (lipid-rich), VHL gene, classic triad: flank pain + hematuria + mass</div>
+      <div class="fact"><span class="keyword">Wilms tumor:</sp
