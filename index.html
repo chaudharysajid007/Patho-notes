@@ -4,82 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pathology MCQ Cheat Sheet</title>
-<style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Segoe UI', sans-serif; background: #0f0f0f; color: #e0e0e0; padding: 16px; }
-  h1 { text-align: center; color: #ff4444; font-size: 1.4em; margin-bottom: 4px; }
-  .subtitle { text-align: center; color: #888; font-size: 0.8em; margin-bottom: 16px; }
-  .system { background: #1a1a1a; border-left: 4px solid #ff4444; border-radius: 8px; margin-bottom: 14px; overflow: hidden; }
-  .system-title { background: #ff4444; color: white; padding: 8px 14px; font-weight: bold; font-size: 0.95em; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
-  .system-title:hover { background: #cc3333; }
-  .system-content { padding: 10px 14px; }
-  .topic { margin-bottom: 10px; }
-  .topic-name { color: #ff8888; font-weight: bold; font-size: 0.85em; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
-  .fact { background: #222; border-radius: 4px; padding: 5px 9px; margin-bottom: 3px; font-size: 0.82em; line-height: 1.45; }
-  .fact .keyword { color: #ffd700; font-weight: bold; }
-  .fact .answer { color: #44ff88; font-weight: bold; }
-  .tip { background: #1a2a1a; border: 1px solid #44ff88; border-radius: 4px; padding: 5px 9px; margin-bottom: 3px; font-size: 0.82em; }
-  .tip::before { content: "⚡ "; color: #44ff88; }
-  .hidden { display: none; }
-  .arrow { transition: transform 0.2s; }
-  .arrow.open { transform: rotate(180deg); }
-  .search-bar { width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #444; background: #1a1a1a; color: white; font-size: 0.9em; margin-bottom: 14px; }
-  .search-bar:focus { outline: none; border-color: #ff4444; }
-  .tag { display: inline-block; background: #2a1a1a; color: #ff8888; border-radius: 3px; padding: 1px 5px; font-size: 0.75em; margin-right: 3px; }
-  
-  
-  
-  .popup {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.7);
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-.popup-content {
-  background: #000000;
-  padding: 25px;
-  border-radius: 12px;
-  text-align: center;
-  width: 300px;
-}
-
-.buttons {
-  margin-top: 15px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.btn {
-  padding: 10px 15px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.thanks {
-  background: #fc1212;
-  color: white;
-}
-
-.popup-content h3 {
-  color: white !important;
-}
-
-
-.cancel {
-  background: #fc1212;
-  color: white;
-}
-</style>
+<link rel="stylesheet" href="style.css">
+ 
 </head>
 <body>
 
@@ -301,10 +227,7 @@
       <div class="fact"><span class="keyword">Hemochromatosis:</span> Iron, "bronze diabetes," <span class="answer">HFE gene</span></div>
     </div>
 
-  </div>
-</div>
-
-<!-- RENAL -->
+  <!-- RENAL -->
 <div class="system">
   <div class="system-title">5. RENAL SYSTEM <span class="arrow">▼</span></div>
   <div class="system-content">
@@ -334,4 +257,90 @@
     <div class="topic">
       <div class="topic-name">Renal Tumors</div>
       <div class="fact"><span class="keyword">Renal Cell Carcinoma:</span> <span class="answer">Clear cells</span> (lipid-rich), VHL gene, classic triad: flank pain + hematuria + mass</div>
-      <div class="fact"><span class="keyword">Wilms tumor:</sp
+      <div class="fact"><span class="keyword">Wilms tumor:</span> Children, <span class="answer">WT1 gene</span>, most common renal tumor in kids</div>
+      <div class="fact"><span class="keyword">Transitional cell carcinoma:</span> Bladder, painless hematuria, smoking + aniline dyes</div>
+    </div>
+
+    <div class="topic">
+      <div class="topic-name">Renal Stones</div>
+      <div class="fact"><span class="keyword">Most common:</span> <span class="answer">Calcium oxalate</span> (radiopaque)</div>
+      <div class="fact"><span class="keyword">Staghorn calculi:</span> <span class="answer">Struvite</span> (Mg-Ammonium-Phosphate) — Proteus infection, alkaline urine</div>
+      <div class="fact"><span class="keyword">Uric acid:</span> Radiolucent, gout</div>
+    </div>
+
+  <!-- SKIN -->
+<div class="system">
+  <div class="system-title">6. SKIN <span class="arrow">▼</span></div>
+  <div class="system-content">
+
+    <div class="topic">
+      <div class="topic-name">Inflammatory Dermatoses</div>
+      <div class="fact"><span class="keyword">Psoriasis:</span> <span class="answer">Munro microabscesses</span>, Auspitz sign (pinpoint bleeding), silvery plaques on extensor surfaces</div>
+      <div class="fact"><span class="keyword">Pemphigus vulgaris:</span> <span class="answer">Intraepidermal</span> blisters, acantholysis, anti-desmoglein (flaccid blisters)</div>
+      <div class="fact"><span class="keyword">Bullous pemphigoid:</span> <span class="answer">Subepidermal</span>, linear IgG + C3, tense blisters, elderly</div>
+    </div>
+
+    <div class="topic">
+      <div class="topic-name">Skin Tumors</div>
+      <div class="fact"><span class="keyword">Basal cell carcinoma:</span> <span class="answer">Palisading nuclei</span>, pearly nodule, most common skin cancer, rarely metastasizes</div>
+      <div class="fact"><span class="keyword">Squamous cell:</span> <span class="answer">Keratin pearls</span>, sun/actinic keratosis → SCC, can metastasize</div>
+      <div class="fact"><span class="keyword">Melanoma:</span> Worst prognosis, <span class="answer">Breslow thickness</span> most important, BRAF mutation</div>
+      <div class="fact"><span class="keyword">Seborrheic keratosis:</span> Stuck-on, "velvety," <span class="answer">horn cysts</span>, benign, elderly</div>
+    </div>
+
+  </div>
+</div>
+<!-- NERVOUS SYSTEM -->
+<div class="system">
+  <div class="system-title">7. NERVOUS SYSTEM <span class="arrow">▼</span></div>
+  <div class="system-content">
+
+    <div class="topic">
+      <div class="topic-name">Meningitis</div>
+      <div class="fact"><span class="keyword">Bacterial CSF:</span> <span class="answer">↑ WBC (neutrophils)</span>, ↑ protein, ↓ glucose</div>
+      <div class="fact"><span class="keyword">Viral CSF:</span> ↑ WBC (lymphocytes), normal glucose, slightly ↑ protein</div>
+      <div class="fact"><span class="keyword">Neonates:</span> GBS, E. coli, Listeria</div>
+      <div class="fact"><span class="keyword">Adults (15–60):</span> <span class="answer">N. meningitidis</span>, S. pneumoniae</div>
+      <div class="fact"><span class="keyword">>60:</span> S. pneumoniae + Listeria</div>
+      <div class="fact"><span class="keyword">Waterhouse-Friderichsen:</span> N. meningitidis → bilateral adrenal hemorrhage</div>
+    </div>
+
+    <div class="topic">
+      <div class="topic-name">Neurodegenerative Disorders</div>
+      <div class="fact"><span class="keyword">Alzheimer:</span> <span class="answer">Amyloid plaques + NFTs</span>, ApoE4 risk, ACh deficiency, hippocampus first</div>
+      <div class="fact"><span class="keyword">Parkinson:</span> <span class="answer">Lewy bodies</span> (alpha-synuclein), loss of dopaminergic neurons in substantia nigra, TRAP (Tremor-Rigidity-Akinesia-Postural instability)</div>
+      <div class="fact"><span class="keyword">Huntington:</span> <span class="answer">CAG repeat</span>, chromosome 4, caudate atrophy, autosomal dominant, choreiform movements</div>
+      <div class="fact"><span class="keyword">ALS:</span> <span class="answer">Both UMN + LMN</span> signs, SOD1 mutation, no sensory/cognitive loss</div>
+    </div>
+    <div class="topic">
+      <div class="topic-name">Brain Tumors</div>
+      <div class="fact"><span class="keyword">Adults #1:</span> <span class="answer">Glioblastoma multiforme</span> — "pseudopalisading necrosis," butterfly pattern, worst prognosis</div>
+      <div class="fact"><span class="keyword">Children #1:</span> <span class="answer">Pilocytic astrocytoma</span> (cerebellum) — Rosenthal fibers, curable</div>
+      <div class="fact"><span class="keyword">Meningioma:</span> Dural attachment, <span class="answer">psammoma bodies</span>, women, benign, slow</div>
+      <div class="fact"><span class="keyword">Schwannoma:</span> CN VIII (acoustic neuroma), bilateral = NF2, <span class="answer">Verocay bodies</span></div>
+      <div class="fact"><span class="keyword">Medulloblastoma:</span> Children, cerebellum, <span class="answer">Homer-Wright rosettes</span>, PNET</div>
+   
+ 
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <h3 style="color:black;">Created by Ch Sajid</h3>
+    <br>
+    <p>🔥 Created in One Night 🔥 <br> In the name of CMLT</p>
+
+    <div class="buttons">
+      <a href="https://wa.me/923440513241?text=Thanks%20Sir" target="_blank" class="btn thanks">
+        Appreciate
+      </a>
+      <button class="btn cancel" onclick="closePopup()">Cancel</button>
+    
+  
+</div>
+   <script src="script.js"></script>
+
+</body>
+  </html>
+   
+   
+   
+   
+
